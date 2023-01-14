@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request, Query
 from typing import Optional
 from typing import Union
 from fastapi.middleware.cors import CORSMiddleware
+from datetime import datetime
 import json
 from fastapi.encoders import jsonable_encoder
 import joblib
@@ -37,13 +38,15 @@ async def new_user(info : Request):
     infoDict = dict(infoDict)
 
     DataIn = list(UserData.find({"Email_Id" : infoDict["Email_Id"]}))
+    print(DataIn)
 
-    if len(DataIn) == 1:
+    if len(DataIn) > 0:
         return {"Status" : "User already exsists"}
 
 
 
     Data = {
+        "CreatedAt" : infoDict["CreatedAt"],
         "User_Id" : 122423,
         "Email_Id" : infoDict["Email_Id"],
         "Name" : infoDict["Name"],
@@ -69,6 +72,24 @@ async def new_user(info : Request):
     print(await info.body())
     infoDict = await info.json()
     infoDict = dict(infoDict)
+    print(infoDict)
+
+
+
+    DataIn = list(UserData.find({"Email_Id" : infoDict["Email_Id"]}))
+    print(DataIn)
+
+    if len(DataIn) == 0:
+        return {"Status" : "User doesn't exists"}
+
+    DataIn = list(UserData.find({"Email_Id" : infoDict["Email_Id"]}))
+    
+    myInfo = DataIn[0]
+
+    del myInfo["_id"]
+
+    return myInfo
+
 
 
 
