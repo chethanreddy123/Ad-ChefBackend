@@ -36,6 +36,13 @@ async def new_user(info : Request):
     infoDict = await info.json()
     infoDict = dict(infoDict)
 
+    DataIn = list(UserData.find({"Email_Id" : infoDict["Email_Id"]}))
+
+    if len(DataIn) == 1:
+        return {"Status" : "User already exsists"}
+
+
+
     Data = {
         "User_Id" : 122423,
         "Email_Id" : infoDict["Email_Id"],
