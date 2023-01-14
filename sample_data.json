@@ -1,0 +1,71 @@
+{
+    "User_Id" : 122423,
+    "Email_Id" : "achethanreddy1921@gmail.com",
+    "Name" : "Jack Rick",
+    "TypeOfSub" : "Pro",
+    "No_Tokens" : 20,
+    "CreatedAt" : "2-253-324234",
+    
+    "Fov_Ads" : [
+
+        {
+            "Kind" : "Ai based application",
+            "Name_of_Company" : "OpenAI",
+            "Type_of_Company" : "Ed_Tech",
+            "USP" : "Makes Ads in Seconds",
+            "Tone" : "Professional Ad",
+            "Audience" : "Small Kids",
+            "Discounts" : "10%",
+            "Ad_Copy" : "Take our Course",
+            "TimeStamp" : "10-2-3-4"
+        },
+        {
+            "Kind" : "Ai based application",
+            "Name_of_Company" : "OpenAI",
+            "Type_of_Company" : "Ed_Tech",
+            "USP" : "Makes Ads in Seconds",
+            "Tone" : "Professional Ad",
+            "Audience" : "Small Kids",
+            "Discounts" : "10%",
+            "Ad_Copy" : "Take our Course",
+            "TimeStamp" : "10-2-3-4"
+        }
+
+    ],
+
+    "Ads_List" : [
+        {
+            "Kind" : "Ai based application",
+            "Name_of_Company" : "OpenAI",
+            "Type_of_Company" : "Ed_Tech",
+            "USP" : "Makes Ads in Seconds",
+            "Tone" : "Professional Ad",
+            "Audience" : "Small Kids",
+            "Discounts" : "10%",
+            "Ad_Copy" : "Take our Course",
+            "TimeStamp" : "10-2-3-4"
+        },
+        {
+            "Kind" : "Ai based application",
+            "Name_of_Company" : "OpenAI",
+            "Type_of_Company" : "Ed_Tech",
+            "USP" : "Makes Ads in Seconds",
+            "Tone" : "Professional Ad",
+            "Audience" : "Small Kids",
+            "Discounts" : "10%",
+            "Ad_Copy" : "Take our Course",
+            "TimeStamp" : "10-2-3-4"
+        },
+        {
+            "Kind" : "Ai based application",
+            "Name_of_Company" : "OpenAI",
+            "Type_of_Company" : "Ed_Tech",
+            "USP" : "Makes Ads in Seconds",
+            "Tone" : "Professional Ad",
+            "Audience" : "Small Kids",
+            "Discounts" : "10%",
+            "Ad_Copy" : "Take our Course",
+            "TimeStamp" : "10-2-3-4"
+        }
+    ]
+}
