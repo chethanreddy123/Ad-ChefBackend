@@ -47,7 +47,7 @@ async def new_user(info : Request):
 
     Data = {
         "CreatedAt" : infoDict["CreatedAt"],
-        "User_Id" : 122423,
+        "User_Id" : infoDict["ID"],
         "Email_Id" : infoDict["Email_Id"],
         "Name" : infoDict["Name"],
         "TypeOfSub" : None,
