@@ -50,10 +50,16 @@ async def new_user(info : Request):
         "User_Id" : infoDict["ID"],
         "Email_Id" : infoDict["Email_Id"],
         "Name" : infoDict["Name"],
-        "TypeOfSub" : None,
-        "No_Tokens" : None,
+        "TypeOfSub" : "Free",
+        "Total_Token_Spent" : 0,
+        "Total_Token_CurrMonth" : 0,
+        "Token_UsedMonth" : 0,
         "Fov_Ads" : [],
-        "Ads_List" : []
+        "Ads_List" : [],
+        "imgURL" : infoDict['imgURL'],
+        "No_Tokens" : 0,
+        "Tokens_left" : 0
+
     }
 
     try:

@@ -3,9 +3,10 @@
     "Email_Id" : "achethanreddy1921@gmail.com",
     "Name" : "Jack Rick",
     "TypeOfSub" : "Pro",
-    "No_Tokens" : 20,
     "CreatedAt" : "2-253-324234",
-    
+    "Total_Token_Spent" : 100,
+    "Total_Token_CurrMonth" : 20,
+    "Token_UsedMonth" : 10,
     "Fov_Ads" : [
 
         {
