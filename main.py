@@ -51,10 +51,10 @@ async def new_user(info : Request):
         "Email_Id" : infoDict["Email_Id"],
         "Name" : infoDict["Name"],
         "TypeOfSub" : "Free",
-        "Token_Left_CurrMonth" : 5,
-        "Total_Token_CurrMonth" : 5, 
-        "Tokens_per_month" : 0,
-        "Total_Token_Spent" : 0,
+        "Token_Left_CurrMonth" : 5, # Left tokens for the month
+        "Total_Token_CurrMonth" : 5,  # total token for current month
+        "Tokens_per_month" : 0, # based on the subscription
+        "Total_Token_Spent" : 0, # all the tokens spent till date
         "Fov_Ads" : [],
         "Ads_List" : [],
         "imgURL" : infoDict['imgURL']
@@ -96,8 +96,6 @@ async def new_user(info : Request):
     return myInfo
 
 
-
-
-
-
-    
+@app.post("/token_update/")
+async def new_user(info : Request):
+    pass
