@@ -98,4 +98,34 @@ async def new_user(info : Request):
 
 @app.post("/token_update/")
 async def new_user(info : Request):
-    pass
+    print(await info.body())
+    infoDict = await info.json()
+    infoDict = dict(infoDict)
+
+    myquery = { "User_Id": infoDict["User_Id"] }
+    newvalues = { "$set": { "Token_Left_CurrMonth":  infoDict["Token_Left_CurrMonth"] } }
+
+    x = UserData.update_one(myquery, newvalues)
+
+    adList = UserData.find_one({"User_Id": infoDict["User_Id"]})["Ads_List"]
+    adList.append({
+        "Name_of_Company" : infoDict["Name_of_Company"],
+        "Type_of_Company" : infoDict["Type_of_Company"],
+        "USP" : infoDict["USP"],
+        "Tone" : infoDict["Tone"],
+        "Details" : infoDict["Details"],
+        "Platform" : infoDict["Platform"],
+        "Prompt" : infoDict["Prompt"],
+        "Ad_Copy" : infoDict["Ad_Copy"],
+    })
+
+
+    myquery = { "User_Id": infoDict["User_Id"] }
+    newvalues = { "$set": { "Ads_List":  adList} }
+
+    x = UserData.update_one(myquery, newvalues)
+
+    if x.modified_count:
+        return {"Status" : "successful"}
+    else:
+        return {"Status" : "unsuccessful"}
