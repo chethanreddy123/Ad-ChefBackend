@@ -96,8 +96,8 @@ async def new_user(info : Request):
     return myInfo
 
 
-@app.post("/token_update/")
-async def new_user(info : Request):
+@app.post("/ad_creation/")
+async def ad_creation(info : Request):
     print(await info.body())
     infoDict = await info.json()
     infoDict = dict(infoDict)
