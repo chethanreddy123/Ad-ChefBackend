@@ -51,14 +51,13 @@ async def new_user(info : Request):
         "Email_Id" : infoDict["Email_Id"],
         "Name" : infoDict["Name"],
         "TypeOfSub" : "Free",
+        "Token_Left_CurrMonth" : 5,
+        "Total_Token_CurrMonth" : 5, 
+        "Tokens_per_month" : 0,
         "Total_Token_Spent" : 0,
-        "Total_Token_CurrMonth" : 0,
-        "Token_UsedMonth" : 0,
         "Fov_Ads" : [],
         "Ads_List" : [],
-        "imgURL" : infoDict['imgURL'],
-        "No_Tokens" : 0,
-        "Tokens_left" : 0
+        "imgURL" : infoDict['imgURL']
 
     }
 
