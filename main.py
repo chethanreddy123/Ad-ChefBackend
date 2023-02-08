@@ -53,7 +53,7 @@ async def new_user(info : Request):
         "TypeOfSub" : "Free",
         "Token_Left_CurrMonth" : 5, # Left tokens for the month
         "Total_Token_CurrMonth" : 5,  # total token for current month
-        "Tokens_per_month" : 0, # based on the subscription
+        "Tokens_per_month" : 5, # based on the subscription
         "Total_Token_Spent" : 0, # all the tokens spent till date
         "Fov_Ads" : [],
         "Ads_List" : [],
