@@ -125,6 +125,13 @@ async def ad_creation(info : Request):
 
     x = UserData.update_one(myquery, newvalues)
 
+
+    myquery = { "User_Id": infoDict["User_Id"] }
+    newvalues = { "$set": { "Total_Token_Spent" :  infoDict["Total_Token_Spent"]} }
+
+    x = UserData.update_one(myquery, newvalues)
+
+
     if x.modified_count:
         return {"Status" : "successful"}
     else:
