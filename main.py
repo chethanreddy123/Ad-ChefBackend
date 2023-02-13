@@ -136,3 +136,25 @@ async def ad_creation(info : Request):
         return {"Status" : "successful"}
     else:
         return {"Status" : "unsuccessful"}
+
+
+@app.post("/fov_ad/")
+async def fov_ad(info : Request):
+    print(await info.body())
+    infoDict = await info.json()
+    infoDict = dict(infoDict)
+
+    myquery = { "User_Id": infoDict["User_Id"] }
+
+    adList = UserData.find_one({"User_Id": infoDict["User_Id"]})["Fov_Ads"]
+    adList.append(infoDict["Ad_string"])
+    
+    newvalues = { "$set": { "Fov_Ads" :  adList } }
+
+    x = UserData.update_one(myquery, newvalues)
+
+
+    if x.modified_count:
+        return {"Status" : "successful"}
+    else:
+        return {"Status" : "unsuccessful"}
