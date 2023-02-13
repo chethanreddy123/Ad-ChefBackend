@@ -97,9 +97,9 @@ async def new_user(info : Request):
 
 
 @app.post("/ad_creation/")
-def ad_creation(info : Request):
-    print(info.body())
-    infoDict = info.json()
+async def ad_creation(info : Request):
+    print(await info.body())
+    infoDict = await info.json()
     infoDict = dict(infoDict)
 
     myquery = { "User_Id": infoDict["User_Id"] }
