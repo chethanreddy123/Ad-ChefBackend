@@ -97,9 +97,9 @@ async def new_user(info : Request):
 
 
 @app.post("/ad_creation/")
-async def ad_creation(info : Request):
-    print(await info.body())
-    infoDict = await info.json()
+def ad_creation(info : Request):
+    print(info.body())
+    infoDict = info.json()
     infoDict = dict(infoDict)
 
     myquery = { "User_Id": infoDict["User_Id"] }
@@ -118,6 +118,8 @@ async def ad_creation(info : Request):
         "Prompt" : infoDict["Prompt"],
         "Ad_Copy" : infoDict["Ad_Copy"],
     })
+
+    print(adList)
 
 
     myquery = { "User_Id": infoDict["User_Id"] }
@@ -148,7 +150,7 @@ async def fov_ad(info : Request):
 
     adList = UserData.find_one({"User_Id": infoDict["User_Id"]})["Fov_Ads"]
     adList.append(infoDict["Ad_string"])
-    
+
     newvalues = { "$set": { "Fov_Ads" :  adList } }
 
     x = UserData.update_one(myquery, newvalues)
