@@ -11,7 +11,9 @@ from datetime import datetime
 import json
 from fastapi.encoders import jsonable_encoder
 import joblib
+import datetime
 from pymongo.mongo_client import MongoClient
+
 
 ConnectData = MongoClient("mongodb://aioverflow:1234@ac-pu6wews-shard-00-00.me4dkct.mongodb.net:27017,ac-pu6wews-shard-00-01.me4dkct.mongodb.net:27017,ac-pu6wews-shard-00-02.me4dkct.mongodb.net:27017/?ssl=true&replicaSet=atlas-jcoztp-shard-0&authSource=admin&retryWrites=true&w=majority")
 UserData = ConnectData.Ad_Chef.userData
@@ -109,6 +111,7 @@ async def ad_creation(info : Request):
 
     adList = UserData.find_one({"User_Id": infoDict["User_Id"]})["Ads_List"]
     adList.append({
+        "Creation_Time" :  datetime.datetime.now(),
         "Name_of_Company" : infoDict["Name_of_Company"],
         "Type_of_Company" : infoDict["Type_of_Company"],
         "USP" : infoDict["USP"],
